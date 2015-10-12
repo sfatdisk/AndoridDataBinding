@@ -5,10 +5,12 @@ public class User {
 
     private String userName;
     private String userPassword;
+    private boolean isExist;
 
-    public User(String userName, String userPassword) {
+    public User(String userName, String userPassword, boolean isExist) {
         this.userName = userName;
         this.userPassword = userPassword;
+        this.isExist= isExist;
     }
 
     public String getUserName() {
@@ -25,5 +27,13 @@ public class User {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public boolean isExist() {
+        return isExist;
+    }
+
+    public void setIsExist(boolean isExist) {
+        this.isExist = isExist;
     }
 }

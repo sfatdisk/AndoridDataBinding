@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bawanj.andoriddatabinding.databinding.ActivityMainBinding;
+import com.bawanj.andoriddatabinding.databinding.MyBinding;
 import com.bawanj.andoriddatabinding.model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // ViewModel: ActivityMainBinding <= activity_main.xml
-        ActivityMainBinding mainBinding
+        MyBinding myBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        User user= new User("Jeffrey", "Nyu168168168");
-        mainBinding.setUser(user);
+        User user= new User("Jeffrey", "Nyu168168168", false);
+        myBinding.setUser(user);
 
     }
 
