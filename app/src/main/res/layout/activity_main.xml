@@ -3,14 +3,21 @@
 
 
     <data class="MyBinding">
+        <!-- Observable collections -->
 
+        <import type="android.databinding.ObservableMap"/>
+        <import type="com.bawanj.andoriddatabinding.model.Keys"/>
         <variable
-            name="user"
-            type="com.bawanj.andoriddatabinding.model.User"/>
+            name="map"
+            type="ObservableMap&lt;String,Object >"/>
 
+        <!--<variable-->
+            <!--name="user"-->
+            <!--type="com.bawanj.andoriddatabinding.model.User"/>-->
 
     </data>
 
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,12 +26,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{ user.userName }"/>
+            android:text="@{map[Keys.name]}"/>
+            <!--android:text="@{ user.userName }"/>-->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{ user.userPassword }"/>
+            android:text="@{map[Keys.age]}"/>
+            <!--android:text="@{ user.userPassword }"/>-->
 
         <Button
             android:layout_width="wrap_content"
@@ -32,7 +41,8 @@
             android:text="Change Data"
             android:id="@+id/btn"
             android:layout_gravity="left"
-            android:onClick="onButtonClick"/>
+            android:onClick="onButtonClick"
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
     

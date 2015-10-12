@@ -1,6 +1,8 @@
 package com.bawanj.andoriddatabinding;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ObservableArrayMap;
+import android.databinding.ObservableMap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.bawanj.andoriddatabinding.databinding.MyBinding;
-import com.bawanj.andoriddatabinding.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,11 +21,17 @@ public class MainActivity extends AppCompatActivity {
         MyBinding myBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        // Observable Fields
-        final User user= new User();
-        user.userName.set("Jeffrey");
-        user.userPassword.set("Nyu168168168");
-        myBinding.setUser(user);
+        //Observable collections
+        final ObservableMap<String, Object > map = new ObservableArrayMap<>();
+        map.put("name","Jeffrey");
+        map.put("age", "36");
+        myBinding.setMap(map);
+
+//        // Observable Fields
+//        final User user= new User();
+//        user.userName.set("Jeffrey");
+//        user.userPassword.set("Nyu168168168");
+//        myBinding.setUser(user);
 
 //      // Observable object
 //        final User user= new User("Jeffrey", "Nyu168168168" );
@@ -34,8 +41,14 @@ public class MainActivity extends AppCompatActivity {
         myBinding.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.userName.set("Hello");
-                user.userPassword.set("Nyu1681689888");
+                map.put("name", "Android");
+                map.put("age", "5");
+
+                  // Observable Fields
+//                user.userName.set("Hello");
+//                user.userPassword.set("Nyu1681689888");
+
+                  // Observable object
 //                user.setUserName("Hello");
 //                user.setUserPassword("Nyu1681689888");
             }
