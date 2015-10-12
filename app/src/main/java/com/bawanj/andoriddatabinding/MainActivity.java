@@ -20,15 +20,24 @@ public class MainActivity extends AppCompatActivity {
         MyBinding myBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        final User user= new User("Jeffrey", "Nyu168168168" );
+        // Observable Fields
+        final User user= new User();
+        user.userName.set("Jeffrey");
+        user.userPassword.set("Nyu168168168");
         myBinding.setUser(user);
 
+//      // Observable object
+//        final User user= new User("Jeffrey", "Nyu168168168" );
+//        myBinding.setUser(user);
+//
         // click the button to change values of TextView
         myBinding.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.setUserName("Hello");
-                user.setUserPassword("Nyu1681689888");
+                user.userName.set("Hello");
+                user.userPassword.set("Nyu1681689888");
+//                user.setUserName("Hello");
+//                user.setUserPassword("Nyu1681689888");
             }
         });
 

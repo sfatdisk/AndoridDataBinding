@@ -8,6 +8,7 @@
             name="user"
             type="com.bawanj.andoriddatabinding.model.User"/>
 
+
     </data>
 
     <LinearLayout
