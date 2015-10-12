@@ -1,5 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <data class="MyBinding">
@@ -24,6 +24,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{ user.userPassword }"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Data"
+            android:id="@+id/btn"
+            android:layout_gravity="left"
+            android:onClick="onButtonClick"/>
 
     </LinearLayout>
     

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.bawanj.andoriddatabinding.databinding.MyBinding;
 import com.bawanj.andoriddatabinding.model.User;
@@ -19,8 +20,17 @@ public class MainActivity extends AppCompatActivity {
         MyBinding myBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        User user= new User("Jeffrey", "Nyu168168168", false);
+        final User user= new User("Jeffrey", "Nyu168168168" );
         myBinding.setUser(user);
+
+        // click the button to change values of TextView
+        myBinding.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setUserName("Hello");
+                user.setUserPassword("Nyu1681689888");
+            }
+        });
 
     }
 
