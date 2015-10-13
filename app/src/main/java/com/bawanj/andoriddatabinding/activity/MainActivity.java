@@ -1,4 +1,4 @@
-package com.bawanj.andoriddatabinding;
+package com.bawanj.andoriddatabinding.activity;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
@@ -8,6 +8,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bawanj.andoriddatabinding.R;
 import com.bawanj.andoriddatabinding.adapter.UserListAdapter;
 import com.bawanj.andoriddatabinding.databinding.ActivityMainBinding;
 import com.bawanj.andoriddatabinding.model.User;
@@ -52,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-        // ViewModel: ActivityMainBinding <= recycler_item.xml
-//        MyBinding myBinding
-//                = DataBindingUtil.setContentView(this, R.layout.recycler_item);
+        // ViewModel: ActivityMainBinding <= user_itemm.xml      MyBinding myBinding
+//                = DataBindingUtil.setContentView(this, R.layout.user_item);
 //
 //        //Observable collections
 //        final ObservableMap<String, Object > map = new ObservableArrayMap<>();

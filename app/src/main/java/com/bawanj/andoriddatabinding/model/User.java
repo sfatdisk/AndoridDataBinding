@@ -23,10 +23,11 @@ public class User extends BaseObservable {
         this.userAge= userAge;
     }
 
-    @Bindable // create BR object
+    @Bindable // create BR object, link to user_item
     public String getUserName() {
         return userName;
     }
+
     @Bindable
     public String getUserPassword() {
         return userPassword;

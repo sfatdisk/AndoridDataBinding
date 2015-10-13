@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bawanj.andoriddatabinding.R;
-import com.bawanj.andoriddatabinding.databinding.RecyclerItemBinding;
+import com.bawanj.andoriddatabinding.databinding.UserItemBinding;
 import com.bawanj.andoriddatabinding.model.User;
 
 import java.util.ArrayList;
@@ -33,17 +33,17 @@ public class UserListAdapter extends RecyclerView.Adapter< UserListAdapter.UserH
 
     public final class UserHolder extends RecyclerView.ViewHolder{
 
-        private RecyclerItemBinding itemBinding;
+        private UserItemBinding itemBinding;
 
         public UserHolder(View itemView) {
             super(itemView);
         }
 
-        public RecyclerItemBinding getItemBinding(){
+        public UserItemBinding getItemBinding(){
             return itemBinding;
         }
 
-        public void setItemBinding( RecyclerItemBinding binding ){
+        public void setItemBinding( UserItemBinding binding ){
             itemBinding= binding;
         }
 
@@ -52,11 +52,14 @@ public class UserListAdapter extends RecyclerView.Adapter< UserListAdapter.UserH
     @Override
     public UserHolder onCreateViewHolder(ViewGroup viewGroup, int viewType ) {
 
-        RecyclerItemBinding itemBinding
-                = DataBindingUtil.inflate(LayoutInflater.from( viewGroup.getContext() )
-                , R.layout.recycler_item, viewGroup, false);
+        UserItemBinding itemBinding
+                = DataBindingUtil.inflate(
+                LayoutInflater.from( viewGroup.getContext() )
+                , R.layout.user_item, viewGroup, false );
 
+        // itemView = itemBinding.getRoot()
         UserHolder userHolder = new UserHolder( itemBinding.getRoot() );
+
         userHolder.setItemBinding(itemBinding);
 
         return userHolder;

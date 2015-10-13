@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <data>
+                <variable
+                    name="movie"
+                    type="com.bawanj.andoriddatabinding.model.Movie"/>
+        </data>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/poster"
+                    android:layout_width="72dp"
+                    android:layout_height="92dp"
+                    android:scaleType="centerCrop"
+                    app:imageUrl="@{ movie.poster }"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/poster"
+                    android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{movie.title }"
+                            android:textSize="20sp"
+                            android:textColor="#353d35"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@{ movie.year }"
+                            android:textColor="#747474"
+                            android:textSize="18sp"
+                            android:textStyle="italic"/>
+
+                </LinearLayout>
+
+        </RelativeLayout>
+
+
+</layout>
