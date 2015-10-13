@@ -1,53 +1,27 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
-
-    <data class="MyBinding">
-        <!-- Observable collections -->
-
-        <import type="android.databinding.ObservableMap"/>
-        <import type="com.bawanj.andoriddatabinding.model.Keys"/>
-        <variable
-            name="map"
-            type="ObservableMap&lt;String,Object >"/>
-
-        <!--<variable-->
-            <!--name="user"-->
-            <!--type="com.bawanj.andoriddatabinding.model.User"/>-->
+    <data>
 
     </data>
 
-    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{map[Keys.name]}"/>
-            <!--android:text="@{ user.userName }"/>-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#03A9F4" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{map[Keys.age]}"/>
-            <!--android:text="@{ user.userPassword }"/>-->
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change Data"
-            android:id="@+id/btn"
-            android:layout_gravity="left"
-            android:onClick="onButtonClick"
-            android:layout_marginTop="30dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
-    
+
 </layout>
-
-
-
-

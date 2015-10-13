@@ -1,0 +1,67 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+        <!-- Observable collections -->
+
+        <!--<import type="android.databinding.ObservableMap"/>-->
+        <!--<import type="com.bawanj.andoriddatabinding.model.Keys"/>-->
+        <!--<variable-->
+            <!--name="map"-->
+            <!--type="ObservableMap&lt;String,Object >"/>-->
+
+        <variable
+            name="user"
+            type="com.bawanj.andoriddatabinding.model.User"/>
+
+    </data>
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#009688">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ user.userName }"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+        <!--android:text="@{map[Keys.name]}"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ user.userPassword }"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+            <!--android:text="@{map[Keys.age]}"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{ String.valueOf( user.userAge ) }"
+            android:textSize="20sp"
+            android:textColor="#ffffff"/>
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Change Data"-->
+            <!--android:id="@+id/btn"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:onClick="onButtonClick"-->
+            <!--android:layout_marginTop="30dp"/>-->
+
+    </LinearLayout>
+    
+</layout>
+
+
+
+
